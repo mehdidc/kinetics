@@ -51,10 +51,8 @@ if __name__ == '__main__':
         _video_id(train_ds.iloc[i], 'data/videos') 
         for i in range(len(train_ds))
     ]
-    train_ds = _remove_non_existent(train_ds)
     train_ds['class'] = train_ds['label-name']
     train_ds = train_ds[['id', 'class']]
-    
     # Test data
     test_ds = download_videos(
         'data/full_test.csv', 
@@ -67,7 +65,6 @@ if __name__ == '__main__':
         _video_id(test_ds.iloc[i], 'data/videos')
         for i in range(len(test_ds))
     ]
-    test_ds = _remove_non_existent(test_ds)
     test_ds['class'] = test_ds['label-name']
     test_ds = test_ds[['id', 'class']]
     
