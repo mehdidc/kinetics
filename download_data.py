@@ -85,3 +85,6 @@ if __name__ == '__main__':
     test_ds = _remove_non_existent(test_ds)
     train_ds.to_csv('data/train.csv', index=False)
     test_ds.to_csv('data/test.csv', index=False)
+
+    print('Final train size after removing non existing : {}'.format(len(train_ds)))
+    print('Final test size after removing non existing : {}'.format(len(test_ds)))
